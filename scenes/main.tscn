@@ -1,3 +1,30 @@
-[gd_scene format=3 uid="uid://3tiofbb7f7ht"]
+[gd_scene load_steps=4 format=3 uid="uid://3tiofbb7f7ht"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_70m5f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eauvl"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5ljjn"]
 
 [node name="main" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, -5.95416e-16, 2.4663e-16, 2.4663e-16, 0.707107, 0.707107, -5.95416e-16, -0.707107, 0.707107, 2.08165e-12, 10, 10)
+projection = 1
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 2.08165e-12, 10, 2.08165e-12)
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, -0.05, 2.08165e-12)
+physics_material_override = SubResource("PhysicsMaterial_70m5f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(0.1, 1.21652e-32, 0, -1.21652e-32, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_eauvl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(10, -1.21652e-32, 0, -1.21652e-30, 0.1, 0, 0, 0, 10, 2.08165e-12, 0, 2.08165e-12)
+custom_aabb = AABB(2.08165e-12, 2.08165e-12, 2.08165e-12, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+mesh = SubResource("BoxMesh_5ljjn")
