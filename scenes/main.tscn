@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://3tiofbb7f7ht"]
+[gd_scene load_steps=6 format=3 uid="uid://3tiofbb7f7ht"]
 
 [ext_resource type="Material" uid="uid://c7o02oryteqtl" path="res://scenes/floor_material.tres" id="1_b2evm"]
 [ext_resource type="PackedScene" uid="uid://bp54yu83v5w6u" path="res://entities/player/player.tscn" id="1_eg6qm"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/joystick/virtual_joystick.tscn" id="3_sgwhn"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_70m5f"]
 
@@ -29,3 +30,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2.08165e-12)
 transform = Transform3D(1, -5.95416e-16, 2.46629e-16, 2.4663e-16, 0.707107, 0.707107, -5.95416e-16, -0.707107, 0.707107, 2.08165e-12, 8.51447, 10)
 projection = 1
 size = 20.0
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Virtual Joystick" parent="UI" instance=ExtResource("3_sgwhn")]
+joystick_mode = 1
+
+[node name="Virtual Joystick2" parent="UI" instance=ExtResource("3_sgwhn")]
+offset_left = 850.0
+offset_right = 1150.0
+joystick_mode = 1
