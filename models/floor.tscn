@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cpv6u8xsgag2s"]
 
-[ext_resource type="Material" uid="uid://c7o02oryteqtl" path="res://scenes/floor_material.tres" id="1_ui26j"]
+[ext_resource type="Material" uid="uid://c7o02oryteqtl" path="res://models/floor_material.tres" id="1_ui26j"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_70m5f"]
 

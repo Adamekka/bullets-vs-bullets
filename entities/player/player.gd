@@ -6,7 +6,7 @@ const SPEED: float = 5.0
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
-func _physics_process(delta):
+func _physics_process(delta: float):
 	# Gravity
 	if !is_on_floor():
 		velocity.y -= gravity * delta

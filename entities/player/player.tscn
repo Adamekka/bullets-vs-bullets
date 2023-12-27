@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bp54yu83v5w6u"]
+[gd_scene load_steps=7 format=3 uid="uid://bp54yu83v5w6u"]
 
+[ext_resource type="Script" path="res://entities/player/player.gd" id="1_cp50k"]
 [ext_resource type="Material" uid="uid://tkblt278yqwn" path="res://entities/player/player_material.tres" id="1_v7fis"]
+[ext_resource type="PackedScene" uid="uid://clkxuno1arvdh" path="res://entities/player/gun.glb" id="2_vd5ih"]
+[ext_resource type="Script" path="res://entities/player/gun.gd" id="4_mvwie"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r13g7"]
 
@@ -8,14 +11,27 @@
 material = ExtResource("1_v7fis")
 
 [node name="Player" type="CharacterBody3D"]
-
-[node name="Camera" type="Camera3D" parent="."]
-transform = Transform3D(1, -5.95416e-16, 2.46629e-16, 2.4663e-16, 0.707107, 0.707107, -5.95416e-16, -0.707107, 0.707107, 2.08165e-12, 8.51447, 10)
-projection = 1
-size = 20.0
+script = ExtResource("1_cp50k")
 
 [node name="Collision" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_r13g7")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_kl0fs")
+
+[node name="Gun" type="Node3D" parent="."]
+script = ExtResource("4_mvwie")
+
+[node name="FlashLight" type="SpotLight3D" parent="Gun"]
+transform = Transform3D(1.19249e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, 1.19249e-08, 1.37253, 0.115051, 0.200806)
+light_energy = 32.0
+spot_range = 24.0
+spot_angle = 80.0
+
+[node name="OmniLight" type="OmniLight3D" parent="Gun"]
+transform = Transform3D(1, 1.27176e-05, -5.98438e-06, -1.27175e-05, 1, 1.03474e-05, 5.98451e-06, -1.03473e-05, 1, 2.08165e-12, 2, 2.08165e-12)
+light_energy = 2.0
+omni_range = 16.0
+
+[node name="Mesh" parent="Gun" instance=ExtResource("2_vd5ih")]
+transform = Transform3D(-0.1, 3.48787e-17, -1.50996e-08, 3.48787e-17, 0.1, -3.48787e-17, 1.50996e-08, -3.48787e-17, -0.1, 0.7, 0.205, 0.3)
