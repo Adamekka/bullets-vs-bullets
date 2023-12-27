@@ -9,6 +9,11 @@ material = ExtResource("1_v7fis")
 
 [node name="Player" type="CharacterBody3D"]
 
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, -5.95416e-16, 2.46629e-16, 2.4663e-16, 0.707107, 0.707107, -5.95416e-16, -0.707107, 0.707107, 2.08165e-12, 8.51447, 10)
+projection = 1
+size = 20.0
+
 [node name="Collision" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_r13g7")
 
