@@ -13,3 +13,8 @@ func _ready():
 
 func _physics_process(delta: float):
 	position += get_meta("direction") * SPEED * delta
+
+	var colliding_nodes: Array[Node3D] = get_colliding_bodies()
+	for node in colliding_nodes:
+		if node is EnemySquare:
+			node.queue_free()

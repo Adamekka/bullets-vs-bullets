@@ -1,5 +1,7 @@
 extends Node3D
 
+class_name Gun
+
 const bullet := preload("res://models/bullet.tscn")
 
 var bullet_spawn_counter: int = 0

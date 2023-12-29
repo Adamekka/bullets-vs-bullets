@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3lntx5pkjfdn"]
+
+[ext_resource type="Script" path="res://entities/enemies/enemy_square.gd" id="1_cr54r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r86cx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_02tr2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pyt3u"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="EnemySquare" type="RigidBody3D"]
+script = ExtResource("1_cr54r")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_r86cx")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_02tr2")
+surface_material_override/0 = SubResource("StandardMaterial3D_pyt3u")

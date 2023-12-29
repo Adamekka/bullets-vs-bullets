@@ -1,5 +1,7 @@
 extends Camera3D
 
+class_name Camera
+
 @export var target: Node3D
 
 

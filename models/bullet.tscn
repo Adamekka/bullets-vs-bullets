@@ -14,6 +14,8 @@ material = SubResource("StandardMaterial3D_7jfhf")
 
 [node name="Bullet" type="RigidBody3D"]
 gravity_scale = 0.1
+max_contacts_reported = 1
+contact_monitor = true
 script = ExtResource("1_uxewj")
 metadata/direction = Vector2(0, 0)
 
