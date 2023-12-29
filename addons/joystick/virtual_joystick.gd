@@ -159,10 +159,7 @@ func _update_joystick(touch_position: Vector2) -> void:
 
 
 func _update_input_action(action: String, value: float):
-	if value > InputMap.action_get_deadzone(action):
-		Input.action_press(action, value)
-	elif Input.is_action_pressed(action):
-		Input.action_release(action)
+	Input.action_press(action, value)
 
 
 func _reset():
