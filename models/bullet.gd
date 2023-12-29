@@ -18,3 +18,4 @@ func _physics_process(delta: float):
 	for node in colliding_nodes:
 		if node is EnemySquare:
 			node.queue_free()
+			Global.score += 1
